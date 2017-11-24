@@ -17,6 +17,8 @@ class FizzBuzz():
     def cond(self, i, _):
         return (tf.less(i, self.length + 1))  # 判断是否是最后一个值
 
+    # in tensorflow1.3,
+    # tf.assign(a,b) return a
     def body(self, i, _):
         flow = tf.cond(
             tf.equal(tf.mod(i, 15), 0),  # 如果值能被 15 整除，那么就把该位置赋值为 FizzBuzz
